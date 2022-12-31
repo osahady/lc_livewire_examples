@@ -18,6 +18,11 @@ class ContactForm extends Component
         'message' => 'required|min:5',
     ];
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function submitForm()
     {
         $this->validate();
